@@ -1,0 +1,73 @@
+{
+  "name": "build-cli",
+  "version": "0.0.0",
+  "description": "项目的定制化打包脚本",
+  "type": "module",
+  "bin": {
+    "build-cli": "bin/build-cli.js"
+  },
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "bin",
+    "config",
+    "lib"
+  ],
+  "scripts": {
+    "cz": "git-cz",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GOGOGOSIR/build-cli.git"
+  },
+  "keywords": [
+    "build",
+    "custom"
+  ],
+  "author": "ericwan <ericwan2021@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GOGOGOSIR/build-cli/issues"
+  },
+  "homepage": "https://github.com/GOGOGOSIR/build-cli#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@gogogosir/eslint-config": "^0.0.1",
+    "@gogogosir/prettier-config": "^0.0.1",
+    "chalk": "^5.0.1",
+    "commitizen": "^4.2.4",
+    "cosmiconfig": "^7.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.17.0",
+    "execa": "^6.1.0",
+    "git-url-parse": "^11.6.0",
+    "husky": "^8.0.1",
+    "inquirer": "^8.2.4",
+    "lint-staged": "^13.0.0",
+    "ora": "^6.1.0",
+    "prettier": "^2.6.2",
+    "shelljs": "^0.8.5",
+    "update-notifier": "^5.1.0",
+    "yargs-parser": "^21.0.1"
+  },
+  "lint-staged": {
+    "packages/**/*.{js,jsx,vue,ts,tsx}": [
+      "eslint --fix --max-warnings 0"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=14.9"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
