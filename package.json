@@ -17,7 +17,7 @@
   "scripts": {
     "cz": "git-cz",
     "prepare": "husky install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "release-it --config ./scripts/release-it.cjs"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "@commitlint/config-conventional": "^17.0.2",
     "@gogogosir/eslint-config": "^0.0.1",
     "@gogogosir/prettier-config": "^0.0.1",
+    "@release-it/conventional-changelog": "^5.0.0",
     "chalk": "^5.0.1",
     "commitizen": "^4.2.4",
     "cosmiconfig": "^7.0.1",
@@ -50,6 +51,7 @@
     "lint-staged": "^13.0.0",
     "ora": "^6.1.0",
     "prettier": "^2.6.2",
+    "release-it": "^15.0.0",
     "shelljs": "^0.8.5",
     "update-notifier": "^5.1.0",
     "yargs-parser": "^21.0.1"
