@@ -36,7 +36,7 @@ yarn add build-cli -D
 
 ## 使用
 
-- 在根目录下新建一个 ```.build-cli.js``` 文件：
+- **在根目录下新建一个 ```.build-cli.js``` 文件：**
 
 ```js
 const pkg = require('./package.json')
@@ -55,7 +55,7 @@ module.exports = {
 }
 ```
 
-- 在 ```package.json``` 中添加以下配置：
+- **在 ```package.json``` 中添加以下配置：**
 
 ```
 "scripts": {
@@ -63,12 +63,12 @@ module.exports = {
 }
 ```
 
-- 配置 dependenciesWorkspace 所绑定的 node 环境的变量
+- **配置 dependenciesWorkspace 所绑定的 node 环境的变量**
 
-方式一：
+**方式一：**
 
 
-找到 ```.zshrc``` 文件并配置：
+**找到 ```.zshrc``` 文件并配置：**
 
 用例：将BUILD_CLI_WORKSPACE指定为Desktop
 
@@ -76,9 +76,9 @@ module.exports = {
 export BUILD_CLI_WORKSPACE=Desktop
 ```
 
-方式二：
+**方式二：**
 
-1. 安装 ```dotenv-cli```
+**1. 安装 ```dotenv-cli```**
 
 ```dash
 // npm
@@ -88,18 +88,20 @@ npm install dotenv-cli -D
 yarn add dotenv-cli -D
 ```
 
-2. 在根目录新增 ```.env.workspace```
+**2. 在根目录新增 ```.env.workspace```**
 
 ```
 BUILD_CLI_WORKSPACE=Desktop
 ```
 
-3. 配置 ```.gitignore```
+**3. 配置 ```.gitignore```**
 
 ```
 .env.workspace
 ```
-4. 配置 ```package.json```
+
+**4. 配置 ```package.json```**
+
 ```json
 "scripts": {
   "build": "dotenv -e .env.workspace build-cli"
@@ -109,34 +111,47 @@ BUILD_CLI_WORKSPACE=Desktop
 ## 参数配置
 
 **projectName**
+
 类型：```String```
+
 是否必填: ```true```
 
 项目名称
+<br/>
 
 **distName**
+
 类型：```String```
+
 是否必填: ```true```
 
 打包后的目录名
+<br/>
 
 **dependenciesWorkspace**
+
 类型：```String```
+
 是否必填: ```false```
+
 默认值： ```BUILD_CLI_WORKSPACE```
 
 一个 node 的全局变量名，用户存放所依赖项目的工作区地址
+<br/>
 
 **dependencies**
+
 类型：```Array<DepType>```
+
 是否必填: ```false```
+
 默认值： ```[]```
 
 所依赖的项目的一些配置
 
 用例:
 
-```json
+```js
 {
   dependencies: [{
     remoteUrl: 'xxxx',
@@ -146,75 +161,105 @@ BUILD_CLI_WORKSPACE=Desktop
   }]
 }
 ```
-DepType 类型说明：
+<br/>
 
-remoteUrl
+**DepType 类型说明：**
+
+**remoteUrl**
+
 类型：```String```
+
 是否必填: ```true```
+
 默认值： ```''```
 
 git 仓库地址
+<br/>
 
-defaultBranch
+**defaultBranch**
+
 类型：```String```
+
 是否必填: ```false```
+
 默认值： ```''```
 
 默认选中的分支名
+<br/>
 
-git 仓库地址
+**packageManager**
 
-packageManager
 类型：```String```
+
 是否必填: ```false```
+
 默认值： ```''```
 
 在安装依赖时的包管理器，如果用户不传入该值，则优先使用 yarn, 如果用户没有安装 yarn 则使用 npm
+<br/>
 
-installCommand
+**installCommand**
+
 类型：```Array<string>```
+
 是否必填: ```false```
+
 默认值： ```[]```
 
 在执行完 install 后，运行的其他命令，例如用例中的 npm link xxx
+<br/>
 
 **buildCommand**
+
 类型：```Array<CommandType>```
+
 是否必填: ```false```
+
 默认值： ```[{ test: 'npm run build:test', staging: 'npm run build:prod'}]```
 
 打包命令的配置
+<br/>
 
-CommandType 属性说明
+**CommandType 属性说明**
 
-test
+**test**
+
 类型：```String```
+
 是否必填: ```true```
+
 默认值： ```npm run build:test```
 
 打包测试环境的命令行
+<br/>
 
-staging
+**staging**
+
 类型：```String```
+
 是否必填: ```true```
+
 默认值： ```npm run build:prod```
 
 打包预发布环境的命令行
+<br/>
 
 ## Q&A
 
-1. 因为 node 版本的原因，在项目安装依赖时报错
+**1. 因为 node 版本的原因，在项目安装依赖时报错**
 
-这个就必须由用户自己切换至合适的 node 版本，手动 install 依赖
+<p style="text-indent: 2em">这个就必须由用户自己切换至合适的 node 版本，手动 install 依赖</p>
 
-2. 为什么 **dependenciesWorkspace** 所绑定的是 node 的环境变量名
+**2. 为什么 **dependenciesWorkspace** 所绑定的是 node 的环境变量名**
 
-为了减少团队成员因为存放项目的目录地址的不同而造成不必要的冲突。
+<p style="text-indent: 2em">为了减少团队成员因为存放项目的目录地址的不同而造成不必要的冲突。</p>
 
-3. 如何自定义配置文件的路径
+**3. 如何自定义配置文件的路径**
+
 
 ```
 "scripts": {
   "build": "build-cli -c scripts/xxx.js"
 }
 ```
+
