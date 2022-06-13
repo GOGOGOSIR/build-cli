@@ -10,6 +10,7 @@ const pkg = getPackageData()
 const aliases = {
   c: 'config',
   v: 'version',
+  e: 'env',
   h: 'help'
 }
 
