@@ -1,6 +1,6 @@
 {
   "name": "@gogogosir/build-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "项目的定制化打包脚本",
   "type": "module",
   "bin": {
