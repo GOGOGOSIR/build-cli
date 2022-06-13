@@ -1,5 +1,5 @@
 {
-  "name": "build-cli",
+  "name": "@gogogosir/build-cli",
   "version": "0.0.0",
   "description": "项目的定制化打包脚本",
   "type": "module",
@@ -14,6 +14,9 @@
     "config",
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "cz": "git-cz",
     "prepare": "husky install",

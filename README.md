@@ -1,11 +1,11 @@
 # build-cli
 
 <p align='left'>
-  <a href='https://www.npmjs.com/package/build-cli'>
-    <img src="https://img.shields.io/npm/v/build-cli?color=41b883&label=npm" />
+  <a href='https://www.npmjs.com/package/@gogogosir/build-cli'>
+    <img src="https://img.shields.io/npm/v/@gogogosir/build-cli?color=41b883&label=npm" />
   </a>
-  <a href='https://www.npmjs.com/package/build-cli'>
-    <img src="https://img.shields.io/npm/l/build-cli?label=npm" />
+  <a href='https://www.npmjs.com/package/@gogogosir/build-cli'>
+    <img src="https://img.shields.io/npm/l/@gogogosir/build-cli?label=npm" />
   </a>
 </p>
 
@@ -15,7 +15,7 @@
 
 ## 背景
 
-当使用微前端将一个庞大的项目拆分成一个个小的应用的时候，难免不了应用之间项目依赖的情况。为了解决这个问题，一般有两种方案：1、 将项目相互依赖的部分抽离一个 npm 包，每个应用安装即可；2、将被依赖项目的路径配置在 alias （例如：在 ```webpack``` 中 alias）中；如果采用方案二的话，在项目打包时，就必须把本地所依赖的项目切换到目标分支并拉取最新的记录，才能执行打包命令。这无疑增加了许多工作量。为了解决这个痛点，**build-cli** 孕育而生。
+当使用微前端将一个庞大的项目拆分成一个个小的应用的时候，难免不了应用之间项目依赖的情况。为了解决这个问题，一般有两种方案：1、 将项目相互依赖的部分抽离一个 npm 包，每个应用安装即可；2、将被依赖项目的路径配置在 alias （例如：在 ```webpack``` 中 alias）中；如果采用方案二的话，在项目打包时，就必须把本地所依赖的项目切换到目标分支并拉取最新的记录，才能执行打包命令。这无疑增加了许多工作量。
 
 ## 执行流程
 
@@ -28,10 +28,10 @@
 
 ```bash
 // npm
-npm install build-cli -D
+npm install @gogogosir/build-cli -D
 
 // yarn
-yarn add build-cli -D
+yarn add @gogogosir/build-cli -D
 ```
 
 ## 使用
