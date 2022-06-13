@@ -1,5 +1,12 @@
 # CHANGE_LOGS
 
+## [0.0.2](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.1...v0.0.2) (2022-06-13)
+
+
+### 📦‍ Build System | 打包构建
+
+* 调整依赖包 ([ea73822](https://github.com/GOGOGOSIR/build-cli/commit/ea738228f1a9ebb2d1e223964eee56fd88b5122d))
+
 ## 0.0.1 (2022-06-13)
 
 
