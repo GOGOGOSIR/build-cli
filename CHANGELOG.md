@@ -1,5 +1,12 @@
 # CHANGE_LOGS
 
+## [0.0.5](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.4...v0.0.5) (2022-06-14)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 当 dependencies 为空数组时,无需配置 dependenciesWorkspace ([932720d](https://github.com/GOGOGOSIR/build-cli/commit/932720dfe2432b64a8fb54cfdcd67d00daa19b6e))
+
 ## [0.0.4](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.3...v0.0.4) (2022-06-14)
 
 
