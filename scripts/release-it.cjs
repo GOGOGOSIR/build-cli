@@ -70,6 +70,6 @@ module.exports = {
     }
   },
   hooks: {
-    'after:bump': 'node ./scripts/update-dev-branch.js'
+    'after:release': 'node ./scripts/update-dev-branch.js'
   }
 }
