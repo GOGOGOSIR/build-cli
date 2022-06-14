@@ -47,7 +47,7 @@ module.exports = {
   targetBranch: {
     staging: 'npm run build' // staging 表示对应的目标分支名，其对应的 value 代表选择该分支构建时要运行的构建命令
   },
-  // 以下参数时非必传
+  // 以下参数是非必传
   dependencies: [
     // {
     //   remoteUrl: '请填写项目的git地址',
@@ -75,10 +75,10 @@ module.exports = {
 
 **找到 ```.zshrc``` 文件并配置：**
 
-用例：将 **BUILD_CLI_WORKSPACE** 指定为 **Desktop**
+用例：将 **BUILD_CLI_WORKSPACE** 指定为 **/Users/mac/Desktop**
 
 ```
-export BUILD_CLI_WORKSPACE=Desktop
+export BUILD_CLI_WORKSPACE=/Users/mac/Desktop
 ```
 
 **方式二：**
@@ -86,7 +86,7 @@ export BUILD_CLI_WORKSPACE=Desktop
 **1. 在根目录新增 ```.env.workspace```**
 
 ```
-BUILD_CLI_WORKSPACE=Desktop
+BUILD_CLI_WORKSPACE="/Users/mac/Desktop"
 ```
 
 **2. 配置 ```.gitignore```**
