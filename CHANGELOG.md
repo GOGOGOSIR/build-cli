@@ -1,5 +1,19 @@
 # CHANGE_LOGS
 
+## [0.0.3](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.2...v0.0.3) (2022-06-14)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 公共方法 hasYarn 的参数错误 ([26e1c79](https://github.com/GOGOGOSIR/build-cli/commit/26e1c79b8e60cc1111399d3381a90b2a9f759a91))
+
+
+### ✨ Features | 新功能
+
+* 工作区支持相对地址的解析 ([745e228](https://github.com/GOGOGOSIR/build-cli/commit/745e228e90758f64efaab18dfb2a526880bc2548))
+* 内置dotenv ([0763021](https://github.com/GOGOGOSIR/build-cli/commit/0763021d6bce3703317581c1eb7d45828e084e55))
+* 新增 targetBranch 用于配置打包的目标分支和构建命令 ([a8cbd68](https://github.com/GOGOGOSIR/build-cli/commit/a8cbd68d06c934292ec1eb28e3225539cd9b2cc4))
+
 ## [0.0.2](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.1...v0.0.2) (2022-06-13)
 
 
