@@ -1,5 +1,12 @@
 # CHANGE_LOGS
 
+## [0.0.6](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.5...v0.0.6) (2022-06-14)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复build error 显示异常 ([779f655](https://github.com/GOGOGOSIR/build-cli/commit/779f6550257e2b96cac8d50c26040aec39746e53))
+
 ## [0.0.5](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.4...v0.0.5) (2022-06-14)
 
 
