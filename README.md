@@ -15,7 +15,7 @@
 
 ## 背景
 
-当使用微前端将一个庞大的项目拆分成一个个小的应用的时候，难免不了应用之间项目依赖的情况。为了解决这个问题，一般有两种方案：1、 将项目相互依赖的部分抽离一个 npm 包，每个应用安装即可；2、将被依赖项目的路径配置在 alias （例如：在 ```webpack``` 中 alias）中；如果采用方案二的话，在项目打包时，就必须把本地所依赖的项目切换到目标分支并拉取最新的记录，才能执行打包命令。这无疑增加了许多工作量。
+当使用微前端将一个庞大的项目拆分成一个个小的应用的时候，难免不了应用之间项目依赖的情况。为了解决这个问题，一般有两种方案：1、 将项目相互依赖的部分抽离一个 npm 包，每个应用安装即可；2、将被依赖项目的路径配置在 alias （例如：在 ```webpack``` 中 alias）中；3、使用 **module federation**，如果采用方案二的话，在项目打包时，就必须把本地所依赖的项目切换到目标分支并拉取最新的记录，才能执行打包命令。这无疑增加了许多工作量。
 
 ## 执行流程
 
@@ -44,14 +44,19 @@ const pkg = require('./package.json')
 module.exports = {
   projectName: pkg.name,
   distName: 'dist', // 这个配置根据你项目的webpack的output而定
-  dependencies: [{
-    remoteUrl: '请填写项目的git地址',
-    defaultBranch: 'master'
-  }],
-  buildCommand: {
-    test: 'xxxxx', // 打包测试环境的命令
-    staging: 'xxx' // 打包预发布环境的命令
-  }
+  targetBranch: {
+    staging: 'npm run build' // staging 表示对应的目标分支名，其对应的 value 代表选择该分支构建时要运行的构建命令
+  },
+  // 以下参数时非必传
+  dependencies: [
+    // {
+    //   remoteUrl: '请填写项目的git地址',
+    //   defaultBranch: 'master',
+    //   packageManager: 'yarn', // 可选，包管理器
+    //   installCommand: ['npm link xxx'] // 可选，install后额外执行的命令
+    // }
+  ],
+  dependenciesWorkspace: 'BUILD_CLI_WORKSPACE' // 定义工作区的路径地址
 }
 ```
 
@@ -63,14 +68,14 @@ module.exports = {
 }
 ```
 
-- **配置 dependenciesWorkspace 所绑定的 node 环境的变量**
+- **配置  dependenciesWorkspace 所绑定的 node 环境的变量**
 
 **方式一：**
 
 
 **找到 ```.zshrc``` 文件并配置：**
 
-用例：将BUILD_CLI_WORKSPACE指定为Desktop
+用例：将 **BUILD_CLI_WORKSPACE** 指定为 **Desktop**
 
 ```
 export BUILD_CLI_WORKSPACE=Desktop
@@ -78,23 +83,13 @@ export BUILD_CLI_WORKSPACE=Desktop
 
 **方式二：**
 
-**1. 安装 ```dotenv-cli```**
-
-```dash
-// npm
-npm install dotenv-cli -D
-
-// yarn
-yarn add dotenv-cli -D
-```
-
-**2. 在根目录新增 ```.env.workspace```**
+**1. 在根目录新增 ```.env.workspace```**
 
 ```
 BUILD_CLI_WORKSPACE=Desktop
 ```
 
-**3. 配置 ```.gitignore```**
+**2. 配置 ```.gitignore```**
 
 ```
 .env.workspace
@@ -104,7 +99,7 @@ BUILD_CLI_WORKSPACE=Desktop
 
 ```json
 "scripts": {
-  "build": "dotenv -e .env.workspace build-cli"
+  "build": "build-cli -e workspace"
 }
 ```
 
@@ -126,6 +121,31 @@ BUILD_CLI_WORKSPACE=Desktop
 是否必填: ```true```
 
 打包后的目录名
+<br/>
+
+**targetBranch**
+
+类型：```Record<string, string>```
+
+是否必填: ```true```
+
+默认值： ```{}```
+
+打包时对应的目标分支和其构建命令的映射
+
+例如：
+```js
+{
+  targetBranch: {
+    staging: 'npm run build' // staging 表示对应的目标分支名，其对应的 value 代表选择该分支构建时要运行的构建命令
+  }
+}
+```
+
+效果：
+
+<img src="./static/eg2.jpg" />
+
 <br/>
 
 **dependenciesWorkspace**
@@ -207,41 +227,6 @@ git 仓库地址
 默认值： ```[]```
 
 在执行完 install 后，运行的其他命令，例如用例中的 npm link xxx
-<br/>
-
-**buildCommand**
-
-类型：```Array<CommandType>```
-
-是否必填: ```false```
-
-默认值： ```[{ test: 'npm run build:test', staging: 'npm run build:prod'}]```
-
-打包命令的配置
-<br/>
-
-**CommandType 属性说明**
-
-**test**
-
-类型：```String```
-
-是否必填: ```true```
-
-默认值： ```npm run build:test```
-
-打包测试环境的命令行
-<br/>
-
-**staging**
-
-类型：```String```
-
-是否必填: ```true```
-
-默认值： ```npm run build:prod```
-
-打包预发布环境的命令行
 <br/>
 
 ## Q&A

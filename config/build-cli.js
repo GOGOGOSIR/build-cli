@@ -3,8 +3,5 @@ export default {
   dependenciesWorkspace: 'BUILD_CLI_WORKSPACE',
   distName: '',
   dependencies: [], // 其他依赖的项目配置
-  buildCommand: {
-    test: 'npm run build:test',
-    staging: 'npm run build:prod'
-  }
+  targetBranch: {}
 }
