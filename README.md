@@ -68,7 +68,7 @@ module.exports = {
 }
 ```
 
-- **配置  dependenciesWorkspace 所绑定的 node 环境的变量**
+- **如果 dependencies 有值，您还需配置  dependenciesWorkspace 所绑定的 node 环境的变量**
 
 **方式一：**
 
