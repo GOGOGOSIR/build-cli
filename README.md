@@ -159,6 +159,19 @@ BUILD_CLI_WORKSPACE=Desktop
 一个 node 的全局变量名，用户存放所依赖项目的工作区地址
 <br/>
 
+使用绝对路径:
+
+```
+BUILD_CLI_WORKSPACE1="/Users/mac/Desktop"
+```
+
+相对路径: **(相对路径是相对 process.cwd())**
+```
+BUILD_CLI_WORKSPACE1=".."
+```
+
+<br/>
+
 **dependencies**
 
 类型：```Array<DepType>```
