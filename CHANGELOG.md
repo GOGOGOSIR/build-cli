@@ -1,5 +1,17 @@
 # CHANGE_LOGS
 
+## [0.0.4](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.3...v0.0.4) (2022-06-14)
+
+
+### 📝 Documentation | 文档
+
+* 修改文档 ([2756ea2](https://github.com/GOGOGOSIR/build-cli/commit/2756ea29147f4ff1cc6e57d4eeb1779873a16af8))
+
+
+### 📦‍ Build System | 打包构建
+
+* release 后同步到dev分支 ([5a61ad3](https://github.com/GOGOGOSIR/build-cli/commit/5a61ad3e4f33a0911610ba7c1ace36dedea2f68a))
+
 ## [0.0.3](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.2...v0.0.3) (2022-06-14)
 
 
