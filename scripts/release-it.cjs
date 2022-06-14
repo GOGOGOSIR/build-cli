@@ -68,5 +68,8 @@ module.exports = {
       header: '# CHANGE_LOGS',
       ignoreRecommendedBump: true
     }
+  },
+  hooks: {
+    'after:bump': 'node ./scripts/update-dev-branch.js'
   }
 }
