@@ -26,7 +26,7 @@
 
 ## node 版本
 
-node 版本需大于等于 ```14.16.0```
+node 版本需大于等于 ```v14.16.0```
 
 ## 安装
 
@@ -74,26 +74,23 @@ module.exports = {
 
 - **如果 dependencies 有值，您还需配置  dependenciesWorkspace 所绑定的 node 环境的变量**
 
-**方式一：**
-
-
-**找到 ```.zshrc``` 文件并配置：**
-
-用例：将 **BUILD_CLI_WORKSPACE** 指定为 **/Users/mac/Desktop**
-
-```
-export BUILD_CLI_WORKSPACE=/Users/mac/Desktop
-```
-
-**方式二：**
-
 **1. 在根目录新增 ```.env.workspace```**
+
+绝对路径的配置方式的用例:
 
 ```
 BUILD_CLI_WORKSPACE="/Users/mac/Desktop"
 ```
 
-**2. 配置 ```.gitignore```**
+相对路径的配置方式的用例:
+
+相对于 ```process.cwd()```的路径
+
+```
+BUILD_CLI_WORKSPACE=".."
+```
+
+**2. 配置 ```.gitignore```（可选，根据实际需求而定）**
 
 ```
 .env.workspace
@@ -161,15 +158,9 @@ BUILD_CLI_WORKSPACE="/Users/mac/Desktop"
 默认值： ```BUILD_CLI_WORKSPACE```
 
 一个 node 的全局变量名，用户存放所依赖项目的工作区地址
-<br/>
 
-使用绝对路径:
+**eg：**
 
-```
-BUILD_CLI_WORKSPACE1="/Users/mac/Desktop"
-```
-
-相对路径: **(相对路径是相对 process.cwd())**
 ```
 BUILD_CLI_WORKSPACE1=".."
 ```
