@@ -1,5 +1,12 @@
 # CHANGE_LOGS
 
+## [0.0.7](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.6...v0.0.7) (2022-06-15)
+
+
+### 📝 Documentation | 文档
+
+* 文档补充说明 ([b91719f](https://github.com/GOGOGOSIR/build-cli/commit/b91719fb867a207675771b0c4f368c9bdf68c66b))
+
 ## [0.0.6](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.5...v0.0.6) (2022-06-14)
 
 
