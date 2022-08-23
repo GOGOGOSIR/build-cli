@@ -53,8 +53,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@gogogosir/eslint-config": "^0.0.1",
-    "@gogogosir/prettier-config": "^0.0.1",
+    "@gogogosir/eslint-config": "^0.0.4",
+    "@gogogosir/prettier-config": "^0.0.4",
     "@release-it/conventional-changelog": "^5.0.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",

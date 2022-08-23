@@ -48,7 +48,7 @@ const pkg = require('./package.json')
 module.exports = {
   projectName: pkg.name,
   distName: 'dist', // 这个配置根据你项目的webpack的output而定
-  targetBranch: {
+  targetBranch: { // key 表示要构建的分支名，value 表示选择该分支时打包的命令
     staging: 'npm run build' // staging 表示对应的目标分支名，其对应的 value 代表选择该分支构建时要运行的构建命令
   },
   // 以下参数是非必传
