@@ -1,5 +1,17 @@
 # CHANGE_LOGS
 
+## [0.1.0](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.7...v0.1.0) (2022-08-23)
+
+
+### 📝 Documentation | 文档
+
+* change readme.md ([21f20b4](https://github.com/GOGOGOSIR/build-cli/commit/21f20b47aef9592b06788913029b84e6db723b34))
+
+
+### ✨ Features | 新功能
+
+* 打包构建时无需清空git工作区 ([a124546](https://github.com/GOGOGOSIR/build-cli/commit/a124546f738e9402a21d6f99f0c3b97043dbd3e7))
+
 ## [0.0.7](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.6...v0.0.7) (2022-06-15)
 
 
