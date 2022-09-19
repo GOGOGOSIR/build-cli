@@ -1,5 +1,12 @@
 # CHANGE_LOGS
 
+## [0.1.1](https://github.com/GOGOGOSIR/build-cli/compare/v0.1.0...v0.1.1) (2022-09-19)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复由于未切换到待构建项目的工作目录导致的构建异常的问题 ([ad9132a](https://github.com/GOGOGOSIR/build-cli/commit/ad9132a911c423efc29c4c25af8d5d16816ce12c))
+
 ## [0.1.0](https://github.com/GOGOGOSIR/build-cli/compare/v0.0.7...v0.1.0) (2022-08-23)
 
 
