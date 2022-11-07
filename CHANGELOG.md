@@ -1,5 +1,17 @@
 # CHANGE_LOGS
 
+## [0.1.2](https://github.com/GOGOGOSIR/build-cli/compare/v0.1.1...v0.1.2) (2022-11-07)
+
+
+### 📝 Documentation | 文档
+
+* 更新文档 ([8b76b63](https://github.com/GOGOGOSIR/build-cli/commit/8b76b63ef047d908c562628f5ec25904af51a0e6))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 压缩包名改为distName ([073fb38](https://github.com/GOGOGOSIR/build-cli/commit/073fb38b764e527f886d2e0dc84314f93066cf2b))
+
 ## [0.1.1](https://github.com/GOGOGOSIR/build-cli/compare/v0.1.0...v0.1.1) (2022-09-19)
 
 
